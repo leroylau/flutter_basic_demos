@@ -20,6 +20,45 @@ class _WebSocketDemoState extends State<WebSocketDemo> {
         title: Text('WebSocketDemo'),
         elevation: 0.0,
       ),
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Form(
+              child: TextFormField(
+                decoration: InputDecoration(labelText: 'Send any message'),
+                controller: editingController,
+              ),
+            ),
+            StreamBuilder(
+              stream: widget.channel.stream,
+              builder: (_, input) {
+                return Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Text(input.hasData ? '${input.data}' : ''),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.send),
+        onPressed: _sendMessage,
+      ),
     );
+  }
+
+  void _sendMessage() {
+    if (editingController.text.isNotEmpty) {
+      widget.channel.sink.add(editingController.text);
+    }
+  }
+
+  @override
+  void dispose() {
+    widget.channel.sink.close();
+    super.dispose();
   }
 }
