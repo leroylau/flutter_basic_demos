@@ -17,7 +17,6 @@ class _HttpDemoState extends State<HttpDemo> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     connectivity = Connectivity();
     subscription =
@@ -29,6 +28,12 @@ class _HttpDemoState extends State<HttpDemo> {
         setState(() {});
       }
     });
+  }
+
+  @override
+  void dispose() {
+    subscription.cancel();
+    super.dispose();
   }
 
   @override
