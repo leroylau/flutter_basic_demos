@@ -1,6 +1,8 @@
 import 'package:basic_demo/demos/http_demo.dart';
+import 'package:basic_demo/demos/web_socket_demo.dart';
 import 'package:basic_demo/widgets/demo_box.dart';
 import 'package:flutter/material.dart';
+import 'package:web_socket_channel/io.dart';
 
 void main() => runApp(MyApp());
 
@@ -47,6 +49,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: 'Connectivity',
                   onTap: () {
                     Navigator.pushNamed(context, 'httpDemo');
+                  },
+                ),
+                DemoBox(
+                  title: 'WebSocket',
+                  onTap: () {
+                    var channel =
+                        IOWebSocketChannel.connect("ws://echo.websocket.org");
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => WebSocketDemo(
+                              channel: channel,
+                            ),
+                      ),
+                    );
                   },
                 ),
               ],
