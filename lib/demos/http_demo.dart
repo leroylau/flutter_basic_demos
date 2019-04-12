@@ -20,15 +20,16 @@ class _HttpDemoState extends State<HttpDemo> {
   void initState() {
     super.initState();
     connectivity = Connectivity();
-    subscription =
-        connectivity.onConnectivityChanged.listen((ConnectivityResult result) {
-      _connectionStatus = result.toString();
-      print(_connectionStatus);
-      if (result == ConnectivityResult.mobile ||
-          result == ConnectivityResult.wifi) {
-        setState(() {});
-      }
-    });
+    subscription = connectivity.onConnectivityChanged.listen(
+      (ConnectivityResult result) {
+        _connectionStatus = result.toString();
+        print(_connectionStatus);
+        if (result == ConnectivityResult.mobile ||
+            result == ConnectivityResult.wifi) {
+          setState(() {});
+        }
+      },
+    );
   }
 
   @override

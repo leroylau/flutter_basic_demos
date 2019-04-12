@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class DemoBox extends StatelessWidget {
+  final String title;
   final GestureTapCallback onTap;
 
-  const DemoBox({Key key, this.onTap}) : super(key: key);
+  const DemoBox({Key key, this.onTap, this.title}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,7 +20,7 @@ class DemoBox extends StatelessWidget {
           color: Colors.black.withOpacity(0.8),
         ),
         title: Text(
-          'Http Demo',
+          title,
           style: TextStyle(color: Colors.black, fontSize: 32.0),
         ),
         onTap: onTap,

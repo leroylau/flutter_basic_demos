@@ -1,3 +1,4 @@
+import 'package:basic_demo/demos/http_demo.dart';
 import 'package:basic_demo/widgets/demo_box.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demos'),
+      routes: {
+        'httpDemo': (context) => HttpDemo(),
+      },
     );
   }
 }
@@ -40,8 +44,9 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 DemoBox(
+                  title: 'Connectivity',
                   onTap: () {
-                    Navigator.pushNamed(context, 'HttpDemo');
+                    Navigator.pushNamed(context, 'httpDemo');
                   },
                 ),
               ],
