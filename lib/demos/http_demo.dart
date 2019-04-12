@@ -1,7 +1,8 @@
 import 'dart:async';
 
+import 'package:basic_demo/utils/fetch_data_from_web.dart';
+import 'package:basic_demo/widgets/circular_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:connectivity/connectivity.dart';
 
 class HttpDemo extends StatefulWidget {
@@ -40,8 +41,26 @@ class _HttpDemoState extends State<HttpDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('HttpDemo'),
+        title: Text('Connectivity'),
         elevation: 0.0,
+      ),
+      body: FutureBuilder(
+        future: getData(),
+        builder: (_, result) {
+          if (result.hasData) {
+            var data = result.data;
+            return ListView.builder(
+              itemCount: data.length,
+              itemBuilder: (_, int index) {
+                return ListTile(
+                  title: Text(data[index]['title']),
+                );
+              },
+            );
+          } else {
+            return CircularIndicator();
+          }
+        },
       ),
     );
   }
