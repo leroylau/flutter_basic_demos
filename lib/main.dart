@@ -4,6 +4,7 @@ import 'package:basic_demo/demos/web_socket_demo.dart';
 import 'package:basic_demo/widgets/demo_box.dart';
 import 'package:flutter/material.dart';
 import 'package:web_socket_channel/io.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() => runApp(MyApp());
 
@@ -48,12 +49,14 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 DemoBox(
+                  icon: FontAwesomeIcons.mobile,
                   title: 'Connectivity',
                   onTap: () {
                     Navigator.pushNamed(context, 'httpDemo');
                   },
                 ),
                 DemoBox(
+                  icon: Icons.message,
                   title: 'WebSocket',
                   onTap: () {
                     var channel =
@@ -68,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
                 DemoBox(
+                  icon: Icons.border_bottom,
                   title: 'BottomSheet',
                   onTap: () {
                     Navigator.pushNamed(context, 'bottomSheet');

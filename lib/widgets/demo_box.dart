@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class DemoBox extends StatelessWidget {
+  final IconData icon;
   final String title;
   final GestureTapCallback onTap;
 
-  const DemoBox({Key key, this.onTap, this.title}) : super(key: key);
+  const DemoBox({Key key, this.onTap, this.title, this.icon}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,7 +20,7 @@ class DemoBox extends StatelessWidget {
             ),
             child: ListTile(
               leading: Icon(
-                Icons.https,
+                icon,
                 size: 40.0,
                 color: Colors.black.withOpacity(0.8),
               ),
