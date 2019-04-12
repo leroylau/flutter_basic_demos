@@ -1,3 +1,4 @@
+import 'package:basic_demo/demos/bottom_sheet.dart';
 import 'package:basic_demo/demos/http_demo.dart';
 import 'package:basic_demo/demos/web_socket_demo.dart';
 import 'package:basic_demo/widgets/demo_box.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: 'Flutter Demos'),
       routes: {
         'httpDemo': (context) => HttpDemo(),
+        'bottomSheet': (context) => BottomSheetDemo(),
       },
     );
   }
@@ -63,6 +65,12 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                       ),
                     );
+                  },
+                ),
+                DemoBox(
+                  title: 'BottomSheet',
+                  onTap: () {
+                    Navigator.pushNamed(context, 'bottomSheet');
                   },
                 ),
               ],

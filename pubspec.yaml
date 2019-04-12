@@ -17,8 +17,9 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
-  connectivity:
-  web_socket_channel:
+  font_awesome_flutter: ^8.4.0
+  connectivity: ^0.4.2+2
+  web_socket_channel: ^1.0.12
   http: ^0.12.0+2
   flutter:
     sdk: flutter

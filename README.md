@@ -6,3 +6,4 @@ A new Flutter project.
 
 * [x] Http
 * [x] WebSocket
+* [x] BottomSheet
