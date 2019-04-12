@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'http';
+import 'package:http/http.dart' as http;
+import 'package:connectivity/connectivity.dart';
 
 class HttpDemo extends StatefulWidget {
   @override
@@ -7,6 +8,8 @@ class HttpDemo extends StatefulWidget {
 }
 
 class _HttpDemoState extends State<HttpDemo> {
+  var _connectionStatus = 'unknown';
+  Connectivity connectivity;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
