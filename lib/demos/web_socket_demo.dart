@@ -11,6 +11,8 @@ class WebSocketDemo extends StatefulWidget {
 }
 
 class _WebSocketDemoState extends State<WebSocketDemo> {
+  TextEditingController editingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
