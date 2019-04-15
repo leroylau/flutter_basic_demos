@@ -4,9 +4,12 @@ import 'package:sqflite/sqflite.dart';
 class UserProvider {
   Database db;
 
-  Future open(String path) async {
+  Future<Database> open(String path) async {
     db = await openDatabase(path, version: 1, onCreate: _onCreate);
+    return db;
   }
+  //[onCreate] is called if the database did not exist prior to calling [openDatabase].
+  //You can use the opportunity to create the required tables in the database according to your schema
 
   Future _onCreate(Database db, int version) async {
     String sql =
@@ -19,9 +22,10 @@ class UserProvider {
     return id;
   }
 
-  Future<int> deleteuser(User user) async {
-    var id =
-        await this.db.delete('User', where: 'id = ?', whereArgs: [user.id]);
+  Future<int> deleteUser(User user) async {
+    var id = await this
+        .db
+        .delete('User', where: 'username = ?', whereArgs: [user.username]);
     return id;
   }
 }
