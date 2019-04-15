@@ -2,11 +2,17 @@ import 'package:basic_demo/models/user_model.dart';
 import 'package:sqflite/sqflite.dart';
 
 class UserProvider {
-  Database db;
+  static Database _db;
 
-  Future<Database> open(String path) async {
+  Future<Database> get db async {
+    if (_db != null) return _db;
+    _db = await initDb();
+    return _db;
+  }
+
+  Future initDb() async {
+    Directory documentDirectory = await getApplicationDocumentDirectory();
     db = await openDatabase(path, version: 1, onCreate: _onCreate);
-    return db;
   }
   //[onCreate] is called if the database did not exist prior to calling [openDatabase].
   //You can use the opportunity to create the required tables in the database according to your schema

@@ -1,5 +1,6 @@
 import 'package:basic_demo/demos/bottom_sheet.dart';
 import 'package:basic_demo/demos/http_demo.dart';
+import 'package:basic_demo/demos/login/login_page.dart';
 import 'package:basic_demo/demos/web_socket_demo.dart';
 import 'package:basic_demo/widgets/demo_box.dart';
 import 'package:flutter/material.dart';
@@ -16,10 +17,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demos'),
+      //home: MyHomePage(title: 'Flutter Demos'),
       routes: {
+        '/': (context) => MyHomePage(title: 'Flutter Demos'),
         'httpDemo': (context) => HttpDemo(),
         'bottomSheet': (context) => BottomSheetDemo(),
+        'loginPage': (context) => LoginPageDemo(),
       },
     );
   }
@@ -73,6 +76,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 DemoBox(
                   icon: Icons.border_bottom,
                   title: 'BottomSheet',
+                  onTap: () {
+                    Navigator.pushNamed(context, 'bottomSheet');
+                  },
+                ),
+                DemoBox(
+                  icon: FontAwesomeIcons.lock,
+                  title: 'LoginPage',
                   onTap: () {
                     Navigator.pushNamed(context, 'bottomSheet');
                   },
