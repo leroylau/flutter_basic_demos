@@ -1,4 +1,5 @@
 import 'package:basic_demo/demos/bottom_sheet.dart';
+import 'package:basic_demo/demos/dissmissible_list_view.dart';
 import 'package:basic_demo/demos/http_demo.dart';
 import 'package:basic_demo/demos/login/login_page.dart';
 import 'package:basic_demo/demos/web_socket_demo.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         'httpDemo': (context) => HttpDemo(),
         'bottomSheet': (context) => BottomSheetDemo(),
         'loginPage': (context) => LoginPageDemo(),
+        'DismissItems': (context) => DissmissibleListItemDemo(),
       },
     );
   }

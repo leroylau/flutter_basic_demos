@@ -41,5 +41,12 @@ List<DemoBox> demos(BuildContext context) {
         Navigator.pushNamed(context, 'loginPage');
       },
     ),
+    DemoBox(
+      icon: FontAwesomeIcons.lock,
+      title: 'DissmissibleList',
+      onTap: () {
+        Navigator.pushNamed(context, 'DismissItems');
+      },
+    ),
   ];
 }
