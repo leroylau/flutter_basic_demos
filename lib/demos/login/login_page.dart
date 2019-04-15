@@ -95,6 +95,7 @@ class _LoginPageDemoState extends State<LoginPageDemo> {
     });
     var db = UserProvider();
     await db.insertUser(user);
+    await Future.delayed(Duration(seconds: 2)); // make the ui to wait 2 seconds
     Navigator.of(context).pushNamed('/');
   }
 
