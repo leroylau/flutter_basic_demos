@@ -11,8 +11,13 @@ class _LoginPageDemoState extends State<LoginPageDemo> {
   // get username and password from form input
   String _username, _password;
 
+  // a marker to status of loading
+  bool _isLoaded = false;
+
   // using formKey to validate and save the input
   final formKey = GlobalKey<FormState>();
+  // using sacffoldKey to show a snakbar
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   Widget loginForm() {
     return Column(
@@ -50,6 +55,7 @@ class _LoginPageDemoState extends State<LoginPageDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       appBar: AppBar(
         title: Text('LoginPageDemo'),
         elevation: 0.0,
@@ -70,11 +76,42 @@ class _LoginPageDemoState extends State<LoginPageDemo> {
     final form = formKey.currentState;
 
     if (form.validate()) {
+      setState(() {
+        _isLoaded = true;
+      });
       form.save();
       var user = User(username: _username, password: _password);
-      var db = UserProvider();
-      await db.insertUser(user);
-      Navigator.of(context).pushNamed('/');
+      onLoginSuccess(user);
+    } else {
+      var error = "Login Error";
+      onLoginError(error);
     }
+  }
+
+  void onLoginSuccess(User user) async {
+    _showSnackBar(user.toString());
+    setState(() {
+      _isLoaded = false;
+    });
+    var db = UserProvider();
+    await db.insertUser(user);
+    Navigator.of(context).pushNamed('/');
+  }
+
+  void onLoginError(String error) {
+    _showSnackBar(error);
+    setState(() {
+      _isLoaded = false;
+    });
+    Navigator.of(context).pushNamed('/');
+  }
+
+  void _showSnackBar(String text) {
+    scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text(
+        text,
+        style: Theme.of(context).textTheme.headline,
+      ),
+    ));
   }
 }

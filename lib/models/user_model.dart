@@ -17,4 +17,9 @@ class User {
       'password': this.password,
     };
   }
+
+  @override
+  String toString() {
+    return 'User {username: $username, password: $password}';
+  }
 }
