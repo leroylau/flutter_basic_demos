@@ -6,6 +6,7 @@ import 'package:basic_demo/widgets/demo_box.dart';
 import 'package:flutter/material.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:basic_demo/demos/index.dart';
 
 void main() => runApp(MyApp());
 
@@ -39,6 +40,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    final demoBoxes = demos(context);
     return Scaffold(
       backgroundColor: Colors.yellow[700],
       appBar: AppBar(
@@ -48,46 +50,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           child: Padding(
             padding: EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                DemoBox(
-                  icon: FontAwesomeIcons.mobile,
-                  title: 'Connectivity',
-                  onTap: () {
-                    Navigator.pushNamed(context, 'httpDemo');
-                  },
-                ),
-                DemoBox(
-                  icon: Icons.message,
-                  title: 'WebSocket',
-                  onTap: () {
-                    var channel =
-                        IOWebSocketChannel.connect("ws://echo.websocket.org");
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) => WebSocketDemo(
-                              channel: channel,
-                            ),
-                      ),
-                    );
-                  },
-                ),
-                DemoBox(
-                  icon: Icons.border_bottom,
-                  title: 'BottomSheet',
-                  onTap: () {
-                    Navigator.pushNamed(context, 'bottomSheet');
-                  },
-                ),
-                DemoBox(
-                  icon: FontAwesomeIcons.lock,
-                  title: 'LoginPage',
-                  onTap: () {
-                    Navigator.pushNamed(context, 'loginPage');
-                  },
-                ),
-              ],
+            child: ListView.builder(
+              itemCount: demoBoxes.length,
+              itemBuilder: (context, int index) {
+                return demoBoxes[index];
+              },
             ),
           ),
         ),
