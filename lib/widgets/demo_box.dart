@@ -26,6 +26,7 @@ class DemoBox extends StatelessWidget {
               ),
               title: Text(
                 title,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(color: Colors.black, fontSize: 32.0),
               ),
               onTap: onTap,

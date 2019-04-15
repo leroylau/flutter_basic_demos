@@ -72,10 +72,9 @@ class _LoginPageDemoState extends State<LoginPageDemo> {
     if (form.validate()) {
       form.save();
       var user = User(username: _username, password: _password);
-      var dbProvider = UserProvider();
-      dbProvider.open('./loginDemoDb.db');
-      await dbProvider.insertUser(user);
-      Navigator.of(context).pushNamed('/home');
+      var db = UserProvider();
+      await db.insertUser(user);
+      Navigator.of(context).pushNamed('/');
     }
   }
 }

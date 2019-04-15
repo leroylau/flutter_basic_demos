@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   icon: FontAwesomeIcons.lock,
                   title: 'LoginPage',
                   onTap: () {
-                    Navigator.pushNamed(context, 'bottomSheet');
+                    Navigator.pushNamed(context, 'loginPage');
                   },
                 ),
               ],
