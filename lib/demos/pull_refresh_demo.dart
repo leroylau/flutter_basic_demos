@@ -15,7 +15,7 @@ class _PullRefreshDemoState extends State<PullRefreshDemo> {
   // make a random list
   Future<Null> refreshList() async {
     refreshKey.currentState?.show(atTop: false);
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 1));
 
     setState(() {
       list = List.generate(random.nextInt(10), (i) => "Item $i");

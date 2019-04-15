@@ -2,11 +2,8 @@ import 'package:basic_demo/demos/bottom_sheet.dart';
 import 'package:basic_demo/demos/dissmissible_list_view.dart';
 import 'package:basic_demo/demos/http_demo.dart';
 import 'package:basic_demo/demos/login/login_page.dart';
-import 'package:basic_demo/demos/web_socket_demo.dart';
-import 'package:basic_demo/widgets/demo_box.dart';
+import 'package:basic_demo/demos/pull_refresh_demo.dart';
 import 'package:flutter/material.dart';
-import 'package:web_socket_channel/io.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:basic_demo/demos/index.dart';
 
 void main() => runApp(MyApp());
@@ -27,6 +24,7 @@ class MyApp extends StatelessWidget {
         'bottomSheet': (context) => BottomSheetDemo(),
         'loginPage': (context) => LoginPageDemo(),
         'DismissItems': (context) => DissmissibleListItemDemo(),
+        'pullToRefresh': (context) => PullRefreshDemo(),
       },
     );
   }

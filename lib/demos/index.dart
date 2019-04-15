@@ -43,9 +43,16 @@ List<DemoBox> demos(BuildContext context) {
     ),
     DemoBox(
       icon: FontAwesomeIcons.lock,
-      title: 'DissmissibleList',
+      title: 'DismissibleList',
       onTap: () {
         Navigator.pushNamed(context, 'DismissItems');
+      },
+    ),
+    DemoBox(
+      icon: FontAwesomeIcons.lock,
+      title: 'PullToRefresh',
+      onTap: () {
+        Navigator.pushNamed(context, 'pullToRefresh');
       },
     ),
   ];
