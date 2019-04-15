@@ -34,7 +34,7 @@ class Episode {
     airtime = json['airtime'];
     airstamp = json['airstamp'];
     runtime = json['runtime'];
-    image = json['image'] != null ? json['image'].fromJson() : null;
+    image = json['image'] != null ? MyImage.fromJson(json['image']) : null;
     summary = json['summary'];
   }
 }
@@ -45,7 +45,7 @@ class MyImage {
 
   MyImage({this.medium, this.original});
 
-  MyImage.fromjson(Map<String, dynamic> json) {
+  MyImage.fromJson(Map<String, dynamic> json) {
     medium = json['medium'];
     original = json['original'];
   }

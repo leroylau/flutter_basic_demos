@@ -7,9 +7,10 @@ class Embedded {
 
   Embedded.fromJson(Map<String, dynamic> json) {
     if (json['episodes'] != null) {
-      for (Map<String, dynamic> v in json['episodes']) {
+      episodes = List<Episode>();
+      json['episodes'].forEach((v) {
         episodes.add(Episode.fromJson(v));
-      }
+      });
     }
   }
 }

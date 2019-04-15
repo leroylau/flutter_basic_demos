@@ -13,7 +13,7 @@ class GOT {
   GOT.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     runtime = json['runtime'];
-    image = json['image'] != null ? MyImage.fromjson(json['image']) : null;
+    image = json['image'] != null ? MyImage.fromJson(json['image']) : null;
     summary = json['summary'];
     embedded =
         json['_embedded'] != null ? Embedded.fromJson(json['_embedded']) : null;

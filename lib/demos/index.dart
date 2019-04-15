@@ -55,5 +55,12 @@ List<DemoBox> demos(BuildContext context) {
         Navigator.pushNamed(context, 'pullToRefresh');
       },
     ),
+    DemoBox(
+      icon: FontAwesomeIcons.lock,
+      title: 'GameOfThrone',
+      onTap: () {
+        Navigator.pushNamed(context, 'gotPage');
+      },
+    ),
   ];
 }
