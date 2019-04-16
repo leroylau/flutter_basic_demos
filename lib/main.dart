@@ -2,6 +2,7 @@ import 'package:basic_demo/demos/bottom_sheet.dart';
 import 'package:basic_demo/demos/dissmissible_list_view.dart';
 import 'package:basic_demo/demos/game_of_throne/episode_page.dart';
 import 'package:basic_demo/demos/game_of_throne/got_main.dart';
+import 'package:basic_demo/demos/hero_widget_demo.dart';
 import 'package:basic_demo/demos/http_demo.dart';
 import 'package:basic_demo/demos/login/login_page.dart';
 import 'package:basic_demo/demos/pull_refresh_demo.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         'DismissItems': (context) => DissmissibleListItemDemo(),
         'pullToRefresh': (context) => PullRefreshDemo(),
         'gotPage': (context) => GOTHomePage(),
+        'heroDemo': (context) => HeroDemo(),
       },
     );
   }

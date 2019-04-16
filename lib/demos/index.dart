@@ -62,5 +62,12 @@ List<DemoBox> demos(BuildContext context) {
         Navigator.pushNamed(context, 'gotPage');
       },
     ),
+    DemoBox(
+      icon: Icons.directions,
+      title: 'HeroWidget',
+      onTap: () {
+        Navigator.pushNamed(context, 'heroDemo');
+      },
+    ),
   ];
 }
