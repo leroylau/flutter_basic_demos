@@ -22,6 +22,7 @@ class HeroDemo extends StatelessWidget {
               Icons.add,
               size: 150.0,
             ),
+            transitionOnUserGestures: true,
           ),
         ),
       ),
@@ -72,6 +73,7 @@ class HeroDemoPageTwo extends StatelessWidget {
                   );
                 }
               },
+              transitionOnUserGestures: true,
             ),
           ),
         ),
