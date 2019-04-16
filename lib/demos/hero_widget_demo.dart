@@ -50,6 +50,13 @@ class HeroDemoPageTwo extends StatelessWidget {
                 Icons.add,
                 size: 150.0,
               ),
+              placeholderBuilder: (context, widget) {
+                return Container(
+                  height: 150.0,
+                  width: 150.0,
+                  child: CircularProgressIndicator(),
+                );
+              },
             ),
           ),
         ),
