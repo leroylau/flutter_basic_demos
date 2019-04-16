@@ -60,10 +60,17 @@ class HeroDemoPageTwo extends StatelessWidget {
               },
               flightShuttleBuilder: (flightContext, animation, direction,
                   fromContext, toContext) {
-                return Icon(
-                  FontAwesomeIcons.rocket,
-                  size: 150.0,
-                );
+                if (direction == HeroFlightDirection.push) {
+                  return Icon(
+                    FontAwesomeIcons.rocket,
+                    size: 150.0,
+                  );
+                } else if (direction == HeroFlightDirection.pop) {
+                  return Icon(
+                    FontAwesomeIcons.rocket,
+                    size: 70.0,
+                  );
+                }
               },
             ),
           ),
