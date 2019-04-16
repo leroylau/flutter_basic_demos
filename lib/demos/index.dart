@@ -42,21 +42,21 @@ List<DemoBox> demos(BuildContext context) {
       },
     ),
     DemoBox(
-      icon: FontAwesomeIcons.lock,
+      icon: Icons.delete,
       title: 'DismissibleList',
       onTap: () {
         Navigator.pushNamed(context, 'DismissItems');
       },
     ),
     DemoBox(
-      icon: FontAwesomeIcons.lock,
+      icon: Icons.refresh,
       title: 'PullToRefresh',
       onTap: () {
         Navigator.pushNamed(context, 'pullToRefresh');
       },
     ),
     DemoBox(
-      icon: FontAwesomeIcons.lock,
+      icon: Icons.games,
       title: 'GameOfThrone',
       onTap: () {
         Navigator.pushNamed(context, 'gotPage');

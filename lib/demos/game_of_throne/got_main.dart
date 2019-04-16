@@ -1,4 +1,5 @@
 import 'package:basic_demo/data/game_of_throne_data_provider.dart';
+import 'package:basic_demo/demos/game_of_throne/episode_page.dart';
 import 'package:basic_demo/models/game_of_thrones_models/game_of_throne_model.dart';
 import 'package:flutter/material.dart';
 
@@ -86,7 +87,12 @@ class _GOTHomePageState extends State<GOTHomePage> {
                               'All Episodes',
                               style: TextStyle(color: Colors.white),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    EpisodePage(got: snapshot.data),
+                              ));
+                            },
                           ),
                         ],
                       ),
