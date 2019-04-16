@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HeroDemo extends StatelessWidget {
   @override
@@ -55,6 +56,13 @@ class HeroDemoPageTwo extends StatelessWidget {
                   height: 150.0,
                   width: 150.0,
                   child: CircularProgressIndicator(),
+                );
+              },
+              flightShuttleBuilder: (flightContext, animation, direction,
+                  fromContext, toContext) {
+                return Icon(
+                  FontAwesomeIcons.rocket,
+                  size: 150.0,
                 );
               },
             ),
