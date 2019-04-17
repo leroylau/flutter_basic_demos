@@ -27,6 +27,17 @@ class ItemCard extends StatelessWidget {
                 width: 70.0,
                 height: 70.0,
               ),
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    Text(aliment.name),
+                    Padding(
+                      padding: EdgeInsets.only(top: 15.0),
+                      child: Text('• ' + aliment.subtitle + ' •'),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
