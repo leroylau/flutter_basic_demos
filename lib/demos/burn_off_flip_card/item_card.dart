@@ -30,10 +30,25 @@ class ItemCard extends StatelessWidget {
               Container(
                 child: Column(
                   children: <Widget>[
-                    Text(aliment.name),
+                    Text(
+                      aliment.name,
+                      style: TextStyle(
+                        fontSize: 60.0,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Qwigley',
+                      ),
+                    ),
                     Padding(
                       padding: EdgeInsets.only(top: 15.0),
-                      child: Text('• ' + aliment.subtitle + ' •'),
+                      child: Text(
+                        '• ' + aliment.subtitle + ' •',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 17.0,
+                          fontFamily: 'Dosis',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
                     ),
                   ],
                 ),
