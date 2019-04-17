@@ -1,5 +1,6 @@
 import 'package:basic_demo/models/burn_off_flip_card/aliment.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ItemCard extends StatelessWidget {
   final Aliment aliment;
@@ -18,7 +19,16 @@ class ItemCard extends StatelessWidget {
         width: MediaQuery.of(context).size.width - 150,
         child: Container(
           margin: EdgeInsets.only(top: 30.0, bottom: 30.0),
-          child: Column(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              SvgPicture.asset(
+                aliment.image,
+                width: 70.0,
+                height: 70.0,
+              ),
+            ],
+          ),
         ),
       ),
     );
