@@ -13,6 +13,10 @@ class ItemCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(15.0),
       ),
       elevation: 25.0,
+      child: Container(
+        height: MediaQuery.of(context).size.height - 250,
+        width: MediaQuery.of(context).size.width - 150,
+      ),
     );
   }
 }
