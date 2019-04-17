@@ -11,10 +11,8 @@ class BurnOffHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('BurnOffHome'),
-        elevation: 0.0,
-      ),
+      body: null,
+      // TODO: the body of scffold is stacked with a series of widgets
     );
   }
 }
