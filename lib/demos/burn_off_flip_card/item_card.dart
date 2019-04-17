@@ -16,6 +16,10 @@ class ItemCard extends StatelessWidget {
       child: Container(
         height: MediaQuery.of(context).size.height - 250,
         width: MediaQuery.of(context).size.width - 150,
+        child: Container(
+          margin: EdgeInsets.only(top: 30.0, bottom: 30.0),
+          child: Column(),
+        ),
       ),
     );
   }
