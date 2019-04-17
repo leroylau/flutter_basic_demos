@@ -1,4 +1,5 @@
 import 'package:basic_demo/demos/bottom_sheet.dart';
+import 'package:basic_demo/demos/burn_off_flip_card/burn_off_home.dart';
 import 'package:basic_demo/demos/dissmissible_list_view.dart';
 import 'package:basic_demo/demos/game_of_throne/got_main.dart';
 import 'package:basic_demo/demos/hero_widget_demo.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         'pullToRefresh': (context) => PullRefreshDemo(),
         'gotPage': (context) => GOTHomePage(),
         'heroDemo': (context) => HeroDemo(),
+        'flipCard': (context) => BurnOffHome(),
       },
     );
   }

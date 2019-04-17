@@ -69,5 +69,12 @@ List<DemoBox> demos(BuildContext context) {
         Navigator.pushNamed(context, 'heroDemo');
       },
     ),
+    DemoBox(
+      icon: Icons.flip,
+      title: 'FlipCard',
+      onTap: () {
+        Navigator.pushNamed(context, 'flipCard');
+      },
+    ),
   ];
 }
