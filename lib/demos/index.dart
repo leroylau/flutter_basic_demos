@@ -83,5 +83,12 @@ List<DemoBox> demos(BuildContext context) {
         Navigator.pushNamed(context, 'flipCard');
       },
     ),
+    DemoBox(
+      icon: Icons.flip_to_back,
+      title: 'ScopedFlipCard',
+      onTap: () {
+        Navigator.pushNamed(context, 'scopedFlipCard');
+      },
+    ),
   ];
 }

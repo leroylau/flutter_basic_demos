@@ -13,6 +13,7 @@ A new Flutter project.
 * [x] Game of throne
 * [x] Hero widget
 * [x] Flip Card
+* [x] Another flip card demo using scoped_model package
 
 ## Key notes
 

@@ -1,4 +1,3 @@
-import 'package:basic_demo/demos/burn_off_flip_card/bottom_scroll_indicator.dart';
 import 'package:basic_demo/demos/burn_off_flip_card/pages.dart';
 import 'package:basic_demo/models/burn_off_flip_card/aliments.dart';
 import 'package:flutter/material.dart';

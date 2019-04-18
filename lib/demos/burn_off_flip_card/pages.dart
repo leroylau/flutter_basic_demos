@@ -5,9 +5,8 @@ import 'package:flutter/material.dart';
 
 class BurnOffPage extends StatelessWidget {
   final Aliment aliment;
-  final int pageIndex;
 
-  const BurnOffPage({Key key, this.aliment, this.pageIndex}) : super(key: key);
+  const BurnOffPage({Key key, this.aliment}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Stack(
