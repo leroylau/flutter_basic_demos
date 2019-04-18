@@ -35,7 +35,6 @@ class _BurnOffHomeState extends State<BurnOffHome> {
       body: PageView.builder(
         controller: _pageController,
         itemCount: aliments.length,
-        pageSnapping: false,
         itemBuilder: (_, int index) {
           return BurnOffPage(aliment: aliments[index]);
         },
