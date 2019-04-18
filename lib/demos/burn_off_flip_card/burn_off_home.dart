@@ -1,3 +1,4 @@
+import 'package:basic_demo/demos/burn_off_flip_card/background.dart';
 import 'package:basic_demo/demos/burn_off_flip_card/item_card.dart';
 import 'package:basic_demo/models/burn_off_flip_card/aliments.dart';
 import 'package:flutter/material.dart';
@@ -15,14 +16,19 @@ class BurnOffHome extends StatelessWidget {
     final aliment = Aliments.aliments[0];
 
     return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.only(top: 20.0),
-          child: ItemCard(
-            aliment: aliment,
-            cardColor: aliment.background,
+      body: Stack(
+        children: <Widget>[
+          BackGround(aliment: aliment),
+          Center(
+            child: Padding(
+              padding: EdgeInsets.only(top: 20.0),
+              child: ItemCard(
+                aliment: aliment,
+                cardColor: aliment.background,
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
