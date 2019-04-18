@@ -20,8 +20,19 @@ class _BurnOffHomeState extends State<BurnOffHome> {
       body: PageView.builder(
         controller: _pageController,
         itemCount: aliments.length,
-        itemBuilder: (_, int index) {
-          BurnOffPage(aliment: aliments[index]);
+        pageSnapping: false,
+        itemBuilder: (_, index) {
+          BurnOffPage(aliment: aliments[index.toInt()]);
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
+        child: Icon(
+          Icons.home,
+          color: aliments[_pageController.page.toInt()].background.colors[0],
+        ),
+        onPressed: () {
+          Navigator.of(context).pushNamed('/');
         },
       ),
     );
