@@ -36,7 +36,7 @@ class _BurnOffHomeState extends State<BurnOffHome> {
         itemCount: aliments.length,
         itemBuilder: (_, int index) {
           return BurnOffPage(
-              aliment: aliments[index], pageController: _pageController);
+              aliment: aliments[index], pageIndex: currentPageValue.toInt());
         },
       ),
       floatingActionButton: FloatingActionButton(

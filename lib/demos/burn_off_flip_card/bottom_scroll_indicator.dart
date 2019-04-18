@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class BottomIndicator extends StatefulWidget {
-  final PageController pageController;
+  final int pageIndex;
 
-  const BottomIndicator({Key key, this.pageController}) : super(key: key);
+  const BottomIndicator({Key key, this.pageIndex}) : super(key: key);
   @override
   _BottomIndicatorState createState() => _BottomIndicatorState();
 }
