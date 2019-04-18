@@ -30,13 +30,13 @@ class _BurnOffHomeState extends State<BurnOffHome> {
         currentPageValue = _pageController.page;
       });
     });
-    print(currentPageValue.toInt());
     return Scaffold(
       body: PageView.builder(
         controller: _pageController,
         itemCount: aliments.length,
         itemBuilder: (_, int index) {
-          return BurnOffPage(aliment: aliments[index]);
+          return BurnOffPage(
+              aliment: aliments[index], pageController: _pageController);
         },
       ),
       floatingActionButton: FloatingActionButton(
