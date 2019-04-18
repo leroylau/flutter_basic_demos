@@ -10,6 +10,7 @@ class BurnOffHome extends StatefulWidget {
 class _BurnOffHomeState extends State<BurnOffHome> {
   final aliments = Aliments.aliments;
   final _pageController = PageController();
+  var currentPageValue = 0.0;
 
   @override
   void initState() {
@@ -24,6 +25,12 @@ class _BurnOffHomeState extends State<BurnOffHome> {
 
   @override
   Widget build(BuildContext context) {
+    _pageController.addListener(() {
+      setState(() {
+        currentPageValue = _pageController.page;
+      });
+    });
+    print(currentPageValue.toInt());
     return Scaffold(
       body: PageView.builder(
         controller: _pageController,
@@ -33,16 +40,16 @@ class _BurnOffHomeState extends State<BurnOffHome> {
           return BurnOffPage(aliment: aliments[index]);
         },
       ),
-      /* floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
         child: Icon(
           Icons.home,
-          color: aliments[_pageController.page.toInt()].background.colors[0],
+          color: aliments[currentPageValue.toInt()].background.colors[0],
         ),
         onPressed: () {
           Navigator.of(context).pushNamed('/');
         },
-      ), */
+      ),
     );
   }
 }
