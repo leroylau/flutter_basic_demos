@@ -16,8 +16,12 @@ class BurnOffHome extends StatelessWidget {
 
     return Scaffold(
       body: Center(
-        child: ItemCard(
-          aliment: aliment,
+        child: Padding(
+          padding: EdgeInsets.only(top: 20.0),
+          child: ItemCard(
+            aliment: aliment,
+            cardColor: aliment.background,
+          ),
         ),
       ),
     );

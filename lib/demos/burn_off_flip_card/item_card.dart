@@ -4,8 +4,9 @@ import 'package:flutter_svg/svg.dart';
 
 class ItemCard extends StatelessWidget {
   final Aliment aliment;
+  final LinearGradient cardColor;
 
-  const ItemCard({Key key, this.aliment}) : super(key: key);
+  const ItemCard({Key key, this.aliment, this.cardColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +50,106 @@ class ItemCard extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                      color: cardColor.colors[0],
+                    ),
+                    width: 70.0,
+                    height: 1.0, // left line
+                  ),
+                  Container(
+                    child: OutlineButton(
+                      borderSide: BorderSide(color: cardColor.colors[0]),
+                      onPressed: () {},
+                      shape: StadiumBorder(),
+                      child: SizedBox(
+                        width: 60.0,
+                        height: 45.0,
+                        child: Center(
+                          child: Text(
+                            '${aliment.totalCalories.toInt()} ' + 'cal',
+                            style: TextStyle(
+                              color: cardColor.colors[0],
+                              fontSize: 17.0,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: cardColor.colors[0],
+                    ),
+                    width: 70,
+                    height: 1.0, // right line
+                  ),
+                ],
+              ),
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Column(
+                      children: <Widget>[
+                        SvgPicture.asset(
+                          'assets/images/running.svg',
+                          width: 30.0,
+                          height: 30.0,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 8.0),
+                          child: Text('${aliment.runTime.toInt()} min'),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: <Widget>[
+                        SvgPicture.asset(
+                          'assets/images/bicycle.svg',
+                          width: 30.0,
+                          height: 30.0,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 8.0),
+                          child: Text('${aliment.bikeTime.toInt()} min'),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: <Widget>[
+                        SvgPicture.asset(
+                          'assets/images/swim.svg',
+                          width: 30.0,
+                          height: 30.0,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 8.0),
+                          child: Text('${aliment.swimTime.toInt()} min'),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: <Widget>[
+                        SvgPicture.asset(
+                          'assets/images/workout.svg',
+                          width: 30.0,
+                          height: 30.0,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 8.0),
+                          child: Text('${aliment.workoutTime.toInt()} min'),
+                        ),
+                      ],
                     ),
                   ],
                 ),
