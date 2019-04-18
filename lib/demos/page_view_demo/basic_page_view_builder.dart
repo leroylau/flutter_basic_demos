@@ -14,6 +14,7 @@ class _BasicPageViewBuilderState extends State<BasicPageViewBuilder> {
         elevation: 0.0,
       ),
       body: PageView.builder(
+        physics: BouncingScrollPhysics(),
         itemCount:
             null, // set to null or not set will generate infinite list of pages
         itemBuilder: (_, index) {
