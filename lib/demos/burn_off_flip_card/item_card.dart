@@ -27,6 +27,11 @@ class ItemCard extends StatelessWidget {
                 aliment.image,
                 width: 70.0,
                 height: 70.0,
+                placeholderBuilder: (context) => Container(
+                      width: 70.0,
+                      height: 70.0,
+                      child: CircularProgressIndicator(),
+                    ),
               ),
               Container(
                 child: Column(

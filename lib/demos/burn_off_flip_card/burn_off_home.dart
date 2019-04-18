@@ -1,3 +1,4 @@
+import 'package:basic_demo/demos/burn_off_flip_card/bottom_scroll_indicator.dart';
 import 'package:basic_demo/demos/burn_off_flip_card/pages.dart';
 import 'package:basic_demo/models/burn_off_flip_card/aliments.dart';
 import 'package:flutter/material.dart';
@@ -35,8 +36,7 @@ class _BurnOffHomeState extends State<BurnOffHome> {
         controller: _pageController,
         itemCount: aliments.length,
         itemBuilder: (_, int index) {
-          return BurnOffPage(
-              aliment: aliments[index], pageIndex: currentPageValue.toInt());
+          return BurnOffPage(aliment: aliments[index]);
         },
       ),
       floatingActionButton: FloatingActionButton(

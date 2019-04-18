@@ -12,7 +12,7 @@ class BurnOffPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        BackGround(aliment: aliment, pageIndex: pageIndex),
+        BackGround(aliment: aliment),
         Center(
           child: Padding(
             padding: EdgeInsets.only(top: 20.0),
