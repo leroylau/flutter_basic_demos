@@ -5,6 +5,7 @@ import 'package:basic_demo/demos/game_of_throne/got_main.dart';
 import 'package:basic_demo/demos/hero_widget_demo.dart';
 import 'package:basic_demo/demos/http_demo.dart';
 import 'package:basic_demo/demos/login/login_page.dart';
+import 'package:basic_demo/demos/page_view_demo/page_view.dart';
 import 'package:basic_demo/demos/pull_refresh_demo.dart';
 import 'package:flutter/material.dart';
 import 'package:basic_demo/demos/index.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         'pullToRefresh': (context) => PullRefreshDemo(),
         'gotPage': (context) => GOTHomePage(),
         'heroDemo': (context) => HeroDemo(),
+        'pageView': (context) => PageViewDemo(),
         'flipCard': (context) => BurnOffHome(),
       },
     );

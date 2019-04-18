@@ -70,6 +70,13 @@ List<DemoBox> demos(BuildContext context) {
       },
     ),
     DemoBox(
+      icon: Icons.pageview,
+      title: 'PageViewDemo',
+      onTap: () {
+        Navigator.pushNamed(context, 'pageView');
+      },
+    ),
+    DemoBox(
       icon: Icons.flip,
       title: 'FlipCard',
       onTap: () {
